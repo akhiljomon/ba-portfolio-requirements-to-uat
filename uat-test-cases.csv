@@ -1,0 +1,18 @@
+test_id,user_story,acceptance_criterion,requirement,priority,tester_role,steps,expected_result,cycle1_actual,cycle1_result,defect_id,cycle2_result
+TC-01,US-01,AC1,FR-01,Must,Customer,Open Order ahead with location on,Nearest three open stores listed with distance,As expected,Pass,,
+TC-02,US-01,AC2,FR-02,Must,Customer,Select store; add item; go to payment,Store name and address shown and must be confirmed before Pay is enabled,As expected,Pass,,
+TC-03,US-01,AC3,FR-02,Must,Customer,View store list after a store's closing time,Closed store shown as closed and cannot be selected,As expected,Pass,,
+TC-04,US-02,AC1,FR-03,Must,Customer,Select large size and extra shot,Price updates immediately with both surcharges,As expected,Pass,,
+TC-05,US-02,AC2,FR-03,Must,Customer,Mark oat milk unavailable in pilot store; open drink options,Oat milk greyed out with 'Not available today',Oat milk still selectable; order accepted,Fail,DEF-02,Pass
+TC-06,US-03,AC1,FR-04,Must,Customer,Open time picker at 7:42 am,Earliest slot 7:55 am; 5-minute steps,As expected,Pass,,
+TC-07,US-03,AC2,FR-07,Must,Customer,Set slot cap to 3; two testers book the last place at the same time,Second tester sees slot as Full and cannot book,Both bookings accepted; slot holds 4 orders,Fail,DEF-01,Pass
+TC-08,US-03,AC3,FR-04,Must,Customer,Open time picker near closing (3:00 pm close),Last slot offered is 2:55 pm,As expected,Pass,,
+TC-09,US-04,AC1,FR-05,Must,Customer,Pay with saved test card,Payment completes without re-entering card,As expected,Pass,,
+TC-10,US-04,AC2,FR-05,Must,Customer,Pay with gateway decline test card,'Payment declined' shown; no order on store screen,As expected,Pass,,
+TC-11,US-05,AC1,FR-06 NFR-01,Must,Barista,Customer pays; barista watches store screen,Order appears within 10 s sorted by pickup time,Appeared in 4 s,Pass,,
+TC-12,US-05,AC2,FR-06,Must,Barista,Place a three-item order,Three labels print with name item options and pickup time,As expected,Pass,,
+TC-13,US-06,AC1,FR-08,Must,Barista,Tap Ready on an order,Customer receives push notification within 30 s,Received in 6 s,Pass,,
+TC-14,US-06,AC2,FR-11,Should,Customer,Open app after order marked ready,Status shows 'Ready for pickup',As expected,Pass,,
+TC-15,US-07,AC1,FR-10 NFR-04,Must,Barista,Leave order unacknowledged for 2 minutes,Order cancelled; refund issued; customer notified,Refund shown in gateway test console after 1 min 40 s,Pass,,
+TC-16,US-08,AC1,FR-09,Should,Customer,Collect order; check loyalty balance,Points for the order added,As expected,Pass,,
+TC-17,US-09,AC1,FR-12,Should,Store manager,Open next-day app order report,Shows order count; average ready-to-collect time; remakes,Average time shown in seconds with no unit label,Fail,DEF-03,Fail (deferred)
